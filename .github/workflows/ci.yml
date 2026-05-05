@@ -2,9 +2,9 @@ name: FleetFlow CI
 
 on:
   push:
-    branches: [main]
+    branches: [complete-fleetflow, main]
   pull_request:
-    branches: [main]
+    branches: [complete-fleetflow, main]
 
 jobs:
   backend-build:
