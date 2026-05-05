@@ -15,7 +15,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import type { UserRole } from '@/contexts/AuthContext';
 
 interface SidebarItem {
-    icon: any;
+    icon: React.ElementType;
     label: string;
     path: string;
     allowedRoles: UserRole[];
@@ -63,7 +63,7 @@ export function Sidebar() {
                         <item.icon className={cn(
                             "w-5 h-5 transition-transform duration-200",
                             "group-hover:scale-110",
-                            ({ isActive }: any) => isActive ? "text-blue-400" : "text-slate-400 group-hover:text-blue-400"
+                            ({ isActive }: { isActive: boolean }) => isActive ? "text-blue-400" : "text-slate-400 group-hover:text-blue-400"
                         )} />
                         <span className="font-medium">{item.label}</span>
                     </NavLink>

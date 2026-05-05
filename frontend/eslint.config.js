@@ -19,5 +19,13 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Context files export both components and hooks — downgrade to warn
+      'react-refresh/only-export-components': 'warn',
+      // react-hooks v7 new rule: setState in effect is a common pattern for hydration
+      'react-hooks/set-state-in-effect': 'warn',
+      // react-hooks v7 new rule
+      'react-hooks/no-deriving-state-in-effects': 'warn',
+    },
   },
 ])
